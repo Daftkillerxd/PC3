@@ -13,7 +13,7 @@ namespace pc3.Integrations
     public class JsonplaceholderAPIIntegration
     {
         private readonly ILogger<JsonplaceholderAPIIntegration> _logger;
-        private const string API_URL="https://jsonplaceholder.typicode.com/todos/";
+        private const string API_URL="https://jsonplaceholder.typicode.com/posts";
         private readonly HttpClient httpClient;
 
         public JsonplaceholderAPIIntegration(ILogger<JsonplaceholderAPIIntegration> logger){
