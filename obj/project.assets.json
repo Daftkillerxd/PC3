@@ -1750,11 +1750,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\DOCUMENTOS\\PROGRA1-PROYECTO\\pc3\\pc3.csproj",
+      "projectUniqueName": "D:\\DESCARGAS\\pc3\\pc3.csproj",
       "projectName": "pc3",
-      "projectPath": "D:\\DOCUMENTOS\\PROGRA1-PROYECTO\\pc3\\pc3.csproj",
+      "projectPath": "D:\\DESCARGAS\\pc3\\pc3.csproj",
       "packagesPath": "C:\\Users\\Viru\\.nuget\\packages\\",
-      "outputPath": "D:\\DOCUMENTOS\\PROGRA1-PROYECTO\\pc3\\obj\\",
+      "outputPath": "D:\\DESCARGAS\\pc3\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Viru\\AppData\\Roaming\\NuGet\\NuGet.Config"

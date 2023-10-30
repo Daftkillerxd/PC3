@@ -24,19 +24,13 @@ namespace pc3.Controllers.UI
         public async Task<IActionResult> Index()
         {
 
-            List<TodoDTO> todos =await _jsonplaceholder.GetAll();
-
-            //List<TodoDTO> filtro = todos.Where(todo => todo.userId > 6).ToList();
-
-            //List<TodoDTO> filtro = todos.Where(todo => todo.title.Contains("Tarea")).ToList();
-
-            List<TodoDTO> filtro = todos
-            .Where(todo => todo.title.Contains("provident") && todo.id > 121)
+            List<PostDTO> post =await _jsonplaceholder.GetAllPost();
+            List<PostDTO> filtro = post
+            .Where(todo => todo.id > 121)
             .OrderBy(todo => todo.title)
-            .ThenByDescending(todo => todo.completed)
             .ToList();
 
-            return View(todos);
+            return View("ListPostView",post);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
@@ -49,16 +43,49 @@ namespace pc3.Controllers.UI
         public async Task<IActionResult> EnviarDatos(String title, String body, int userId)
         {
 
-            var variable = _jsonplaceholder.PostData(title,body,userId);
-            Console.WriteLine(variable);
+            var variable = await _jsonplaceholder.PostData(title,body,userId);
+            Console.WriteLine(variable); //CAMBIE ESTO    
             return RedirectToAction("PostData");
         }
 
         [HttpGet]
-        public async Task<IActionResult> PostData(String title, String body, int userId)
+        public async Task<IActionResult> PostData()
         {
-
             return View("Postview");
         }
+
+
+        public async Task<IActionResult> DeleteData(int postId)
+        {
+            await _jsonplaceholder.DeleteData(postId);
+            return View("Postview");
+        }
+
+        public async Task<IActionResult> UpdateData(int userIdRequest,int normalIdRequest,string titleRequest,string bodyRequest){
+            await _jsonplaceholder.UpdateData(normalIdRequest,userIdRequest,titleRequest,bodyRequest);
+           return RedirectToAction("Index"); 
+        }
+
+        [HttpGet]
+        public IActionResult UpdateForm(int idPost,int userId)
+        {
+
+            Console.WriteLine(idPost + userId + " ");
+
+            ViewBag.userIdTag =userId;
+            ViewBag.postIdTag =idPost;
+            return View("UpdateView");
+
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> VerData(int idPost,int userId){
+            var post = await _jsonplaceholder.ViewData(userId,idPost);
+            Console.WriteLine(post);
+           return View("PostDataView",post); 
+        }
+
+
+
     }
 }

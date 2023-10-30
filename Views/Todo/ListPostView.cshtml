@@ -1,0 +1,55 @@
+@model IEnumerable<pc3.DTO.PostDTO>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.userId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.body)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.userId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.body)
+            </td>
+             <td>
+                <a asp-controller="Todo" asp-action="VerData" asp-route-userId="@item.userId" asp-route-idPost="@item.id">Ver</a>
+            </td>
+            <td>
+                <a asp-controller="Todo" asp-action="UpdateForm" asp-route-userId="@item.userId" asp-route-idPost="@item.id">Actualizar</a>
+
+            </td>
+            <td>
+                <a asp-controller="Todo" asp-action="DeleteData" asp-route-postId="@item.id">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

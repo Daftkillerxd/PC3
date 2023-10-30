@@ -1,0 +1,19 @@
+<form method="post" asp-controller="Todo" asp-action="UpdateData">
+    <div class="form-group">
+        <label for="title">Título</label>
+        <input type="text" id="title" name="titleRequest" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="body">Información</label>
+        <textarea id="body" name="bodyRequest" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="userId">ID de Usuario</label>
+        <input type="number" id="userIdRequest" name="userId" value="@ViewBag.userIdTag" class="form-control" readonly/>
+    </div>
+    <div class="form-group">
+        <label for="normalIdRequest">ID de Post</label>
+        <input type="number" id="normalIdRequest" value="@ViewBag.postIdTag" name="normalIdRequest" class="form-control" readonly/>
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>

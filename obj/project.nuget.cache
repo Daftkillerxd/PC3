@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UfVoPRgG0KKjDeFqklu1l4cN4Lm0rIHxh0HxKxjKtZfewRDpfLNJ9c3Ef7P8PEg2hNADF8jzxkA73z0uQe7yyg==",
+  "dgSpecHash": "LUSjJJFFX4uF79X/RgpBWMHwnKBNyD6kEozWbeMabmqmuFSKjJI6n7O7tz8WHfCcwM9vnCzrR4rD9TZk5lS/wQ==",
   "success": true,
-  "projectFilePath": "D:\\DOCUMENTOS\\PROGRA1-PROYECTO\\pc3\\pc3.csproj",
+  "projectFilePath": "D:\\DESCARGAS\\pc3\\pc3.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Viru\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Viru\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.24\\microsoft.aspnetcore.cryptography.internal.6.0.24.nupkg.sha512",
